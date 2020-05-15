@@ -36,7 +36,7 @@ class Points_Tracing():
             image2_kp = np.float32(
                 [kp2[i].pt for (i, _) in good_points])
             
-            H, status = cv2.findHomography(image2_kp, image1_kp, cv2.RANSAC,5.0)
+            H, status = cv2.findHomography(image1_kp, image2_kp, cv2.RANSAC,5.0)
             
             return H
         else:
